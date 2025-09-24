@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Wanderlust Adventures</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --primary-color: #3a4250;
+            --text-color: #5d3838;
+            --bg-color: #715b5b;
+            --card-bg: #fcf9f9;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+      
+        .main-header {
+            background-color: var(--card-bg);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            padding: 0.5rem 0.8rem;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-list a:hover {
+            color: var(--primary-color);
+        }
+
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x600/34495e/fff?text=Explore+More') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #b05959;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        .page-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+       
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 300px;
+            text-align: center;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+             font-size: 1.5rem;
+             margin-top: 0;
+        }
+
+       
+        .about-intro-bg {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://placehold.co/1920x800/888/fff?text=About+Us+Background') no-repeat center center/cover;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        
+        .contact-form-container {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #3f3434;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary-color);
+            color: #a67c7c;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color var(--transition-speed), transform 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #093b82;
+            transform: translateY(-2px);
+        }
+
+        .contact-details {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            margin: 0 0.8rem;
+            transition: color var(--transition-speed);
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .main-footer {
+            background-color: #6d7680;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+       
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+            }
+
+            .nav-list {
+                margin-top: 1rem;
+            }
+            
+            .nav-list li {
+                margin: 0 0.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="container main-nav">
+            <span class="logo">Travel Adventures</span>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+       
+        <section id="home" class="page-section">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1></h1>
+                    <p></p>
+                   <img src="http://wallpapercave.com/wp/8Ww0M0U.jpg" alt="Mountain image" class="card-image">
+                </div>
+            </div>
+
+            <div class="container">
+                <h2 class="section-title"></h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="http://wallpapercave.com/wp/8Ww0M0U.jpg" alt="Mountain image" class="card-image">
+                        <h3 class="card-title">Mountains</h3>
+                        <p>Experience the thrill of the mountains.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.RfdsjuoMoxaD_Ub7rBuHiQHaEo?pid=Api&rs=1&c=1&qlt=95&w=161&h=100" alt="City image" class="card-image">
+                        <h3 class="card-title">Cities</h3>
+                        <p>Discover the vibrant life of major cities.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://picfiles.alphacoders.com/960/9601.jpg" alt="Beach image" class="card-image">
+                        <h3 class="card-title">Beaches</h3>
+                        <p>Relax on beautiful, sunny beaches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="about" class="page-section">
+            <div class="container">
+                <div class="about-intro-bg">
+                    <h2 class="section-title">About Us</h2>
+                    <p>Wanderlust Adventures is dedicated to helping you find your next great trip. We believe that travel is an opportunity to grow, learn, and create unforgettable memories.</p>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Our Mission</h3>
+                        <p>To inspire and enable people to travel and experience the world in new and meaningful ways.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Vision</h3>
+                        <p>To be the leading online resource for personalized travel experiences, fostering a community of global explorers.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Why Choose Us?</h3>
+                        <p>We provide curated travel guides, expert tips, and a seamless experience to make your journey hassle-free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="contact" class="page-section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-form-container">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender">
+                                <option>Select Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" id="country">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-details">
+                    <p>Email: travelsadventure@gmail.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Travel Adventures. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
